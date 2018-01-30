@@ -11,3 +11,17 @@
     regexp: '^apply_updates = .+'
     line: 'apply_updates = yes'
   when: security_autoupdate_enabled and ansible_distribution_major_version | int == 7
+
+  # - name: Configure autoupdates (RHEL 7) part 1.
+  #   lineinfile:
+  #     dest: "/etc/yum/yum-cron-hourly.conf"
+  #     regexp: '^download_updates = .+'
+  #     line: 'download_updates = yes'
+  #   when: security_autoupdate_enabled and ansible_distribution_major_version | int == 7
+  #
+  # - name: Configure autoupdates (RHEL 7) part 2.
+  #   lineinfile:
+  #     dest: "/etc/yum/yum-cron-hourly.conf"
+  #     regexp: '^apply_updates = .+'
+  #     line: 'apply_updates = yes'
+  #   when: security_autoupdate_enabled and ansible_distribution_major_version | int == 7
